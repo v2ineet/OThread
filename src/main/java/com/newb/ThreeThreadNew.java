@@ -97,6 +97,12 @@ class ProducerLine1 implements Runnable{
 	@Override
 	public void run() {
 		for(int i = 1; i <= 99; i+=3){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			line.pushToLine1(i);
 		}
 	}
@@ -147,7 +153,7 @@ class ConsumeLine implements Runnable{
 	
 	@Override
 	public void run() {
-		for(int i = 3; i <= 99; i+=3){
+		while(true){
 			System.out.println(line.getLineValue());
 		}	
 	}
