@@ -14,7 +14,7 @@ public class ThreeThreadLock {
 	Condition cond2 = lock.newCondition();
 	Condition cond3 = lock.newCondition();
 
-	private volatile int nextThread = 1;
+	private volatile int nextThread = 1; 
 
 	class ThreadA implements Runnable {
 
